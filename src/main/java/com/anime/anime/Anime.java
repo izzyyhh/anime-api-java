@@ -1,25 +1,42 @@
 package com.anime.anime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 
+@Entity
+@Table(name = "Anime")
 public class Anime {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @NotEmpty
     private String name;
     @NotEmpty
     private String opinion;
 
-    public Anime(String id, String name, String opinion) {
+    public Anime() {
+    }
+
+    public Anime(Long id, String name, String opinion) {
         this.id = id;
         this.name = name;
         this.opinion = opinion;
     }
 
-    public String getId() {
+    public Anime(String name, String opinion) {
+        this.name = name;
+        this.opinion = opinion;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -38,5 +55,4 @@ public class Anime {
     public void setOpinion(String opinion) {
         this.opinion = opinion;
     }
-    
 }

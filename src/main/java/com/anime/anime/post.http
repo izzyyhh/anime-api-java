@@ -1,0 +1,7 @@
+POST http://localhost:8080/anime HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Sword Art Online",
+    "opinion": "I liked it cuz i am a gamer, and the romance was a the cherry on the cake"
+}

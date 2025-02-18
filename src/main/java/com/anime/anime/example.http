@@ -1,8 +1,0 @@
-POST http://localhost:8080/anime HTTP/1.1
-content-type: application/json
-
-{
-    "id": "test",
-    "name": "Oregairu",
-    "opinion": "richtig nice"
-}
